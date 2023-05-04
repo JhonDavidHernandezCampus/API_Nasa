@@ -1,8 +1,15 @@
+import storage from '../consulta_API/consulta_ETC.js';
 export default{
-    datos(){
+    async datos(){
+        const data = await storage.dataconsulta();
+        console.log(data);
         const elements = document.querySelector('.elements');
-        let ws = new Worker(('./components/ws.js'),{type:'module'});
+        const ws = new Worker("./storage/ws.js",{type:"module"});
+        ws.postMessage({module: "pintarData",data: data});
 
-        
+        ws.addEventListener("message",(e)=>{
+            console.log(e.data);
+        })
     }
+
 }
