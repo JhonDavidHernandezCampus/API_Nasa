@@ -1,16 +1,22 @@
-import storage from '../consulta_API/consulta_ETC.js';
 export default{
-    async datos(){
-        const data = await storage.dataconsulta();
+    async datos(fecha){
         const elements = document.querySelector('.elements');
         const ws = new Worker("./storage/ws.js",{type:"module"});
-        ws.postMessage({module: "pintarData",data: data});
+        ws.postMessage({module: "pintarData", data:fecha});
 
         ws.addEventListener("message",(e)=>{
             let section = document.querySelector(".elements");
-            section.innerHTML = e.data;
-            section.style.backgroundImage= `url(${data.url})`;
+            section.innerHTML = e.data[0];
+            section.style.backgroundImage=`url(${e.data[1].url})`;
+        })
+    },
+    fecha(){
+        let form = document.querySelector("form");
+        form.addEventListener("submit", (e)=>{
+            let fecha = document.querySelector("input[name=fecha]").value;
+            e.preventDefault();
+            this.datos(fecha);
+            console.log(fecha);
         })
     }
-
 }
