@@ -11,7 +11,7 @@ let ws = {
         }
     },
     pintarData(data){
-        console.log(data)
+        //console.log(data)
         let vard = "";
         vard =`
             <div class="informacion">
@@ -27,6 +27,9 @@ let ws = {
 }
 self.addEventListener("message", async (e)=>{
     let fechaPordefecto = new Date().toISOString().slice(0,10);
-    let res = await ws.dataconsulta((e.data.fecha)?e.data.fecha:fechaPordefecto)
+    /* console.log(fechaPordefecto);
+    console.log(e.data); */
+    console.log(e.data);
+    let res = await ws.dataconsulta((e.data.data)?e.data.data:fechaPordefecto)
     postMessage([ws[`${e.data.module}`](res), res])
 })

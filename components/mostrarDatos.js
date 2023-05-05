@@ -1,7 +1,11 @@
 export default{
-    async datos(fecha){
+    async datos(){
         const elements = document.querySelector('.elements');
         const ws = new Worker("./storage/ws.js",{type:"module"});
+
+        let fecha = document.querySelector("input[name=fecha]").value;
+        console.log(fecha);
+        
         ws.postMessage({module: "pintarData", data:fecha});
 
         ws.addEventListener("message",(e)=>{
@@ -10,13 +14,20 @@ export default{
             section.style.backgroundImage=`url(${e.data[1].url})`;
         })
     },
+
+
+
+
+
+
+
     fecha(){
         let form = document.querySelector("form");
         form.addEventListener("submit", (e)=>{
             let fecha = document.querySelector("input[name=fecha]").value;
             e.preventDefault();
             this.datos(fecha);
-            console.log(fecha);
+            /* console.log(fecha); */
         })
     }
 }
