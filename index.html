@@ -22,22 +22,25 @@
     <header class="cabeza">
         <form action="">
             <h1>Fecha:</h1>
-            <input class="form-control" type="date" min="2019-01-01">
-            <button class="btn"><img src="img/seo-1970475_1280.webp" alt="" ></button>
+            <input class="form-control" name="fecha" type="date" min="2019-01-01" required>
+            <button class="btn" type="submit"><img src="img/seo-1970475_1280.webp" alt="" ></button>
         </form>
     </header>
-    <section class="elements">
+    <div class="contene">
+        <section class="elements">
+<!--                 <div class="img">
+                    <img src="img/Galaxy_Whirpool_NASA.jpg" alt="">
+                    <div class="informacion">
+                        <h1>Informacion</h1>
+                        <h5>${title}</h5>
+                        <p>Fecha: ${date}</p>
+                        <p> Explicacion: ${explanation}</p>
+                        <p>Autor: ${data.copyright}</p>
+                        <a href="${url}" class="btn" >Ver imagen</a>
+                    </div>
+                </div> -->
+        </section>
+    </div>
 
-            <div class="img">
-                <img src="img/Galaxy_Whirpool_NASA.jpg" alt="">
-            </div>
-            <div class="informacion">
-                <h1>Informacion</h1>
-                <h5>${title}</h5>
-                <p>Fecha: ${date}</p>
-                <p> Explicacion: ${explanation}</p>
-                <a href="${url}" class="btn">Ver imagen</a>
-            </div>
-    </section>
 </body>
 </html>

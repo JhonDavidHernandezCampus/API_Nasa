@@ -13,7 +13,8 @@
 }
 
 .cabeza{
-    background-image: url(img/apod.jpg);   
+    /* background-image: url(img/apod.jpg);    */
+    background-color: rgb(21, 30, 13);
     background-attachment: fixed;
     background-size: cover;
 }
@@ -33,14 +34,13 @@ form{
     display: flex;
     width: 100%;
     padding: 40px;
+    background-size: cover;
+    background-position:center ;
+    color: aliceblue;
+    font-size: 20px;
+    border-radius:20px ;
 }
-.img img{
-    border: solid rgb(0, 0, 0) 1px;
-    border-radius: 20px;
-}
-.informacion {
-    border-radius: 20px;
+
+.contene{
     padding: 20px;
-    height: 400px;
-    overflow: scroll;
 }
