@@ -3,7 +3,7 @@
 import mostrarDatos from './components/mostrarDatos.js';
 mostrarDatos.datos();
 mostrarDatos.fecha();
-
+mostrarDatos.lotes();
 
 
 /* Extraemos la fecha actual */

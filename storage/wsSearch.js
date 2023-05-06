@@ -19,17 +19,15 @@ let ws = {
                 <h5>${data.title}</h5>
                 <p>Fecha: ${data.date}</p>
                 <p> Explicacion: ${data.explanation}</p>
-                <p>Autor: ${data.copyright}</p>
+                <p>Autor: ${(data.copyright)?data.copyright:"Autor Desconosido"}</p>
                 <a href="${data.url}" class="btn btn-info" target="_blank">Ver imagen</a>
+
             </div>`;
         return vard;
     }
 }
 self.addEventListener("message", async (e)=>{
     let fechaPordefecto = new Date().toISOString().slice(0,10);
-    /* console.log(fechaPordefecto);
-    console.log(e.data); */
-    console.log(e.data);
-    let res = await ws.dataconsulta((e.data.data)?e.data.data:fechaPordefecto)
-    postMessage([ws[`${e.data.module}`](res), res])
+    let res = await ws.dataconsulta((e.data.data)?e.data.data:fechaPordefecto);
+    postMessage([ws[`${e.data.module}`](res), res]);
 })
