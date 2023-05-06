@@ -25,8 +25,6 @@ export default{
         ws.postMessage({module:"pintar"});
         ws.addEventListener("message",(e)=>{
             let contenedor= document.querySelector("#contenedor");
-/*             console.log(contenedor);
-            console.log(...e.data); */
             contenedor.innerHTML=(e.data);
 
         })

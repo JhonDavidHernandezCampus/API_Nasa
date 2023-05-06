@@ -16,16 +16,19 @@ let ws ={
             <div class="col-sm-6 col-md-4 col-lg-3 mb-4 pelicula">
                     <div class="contenido">
                         <img class="poster" src="${e.hdurl}">
-                        <h3 class="titulo">${(e.copyright?e.copyright:"Autor desconocido")}<h3>
+                        
                     </div>
                     <div class="animacion">
                         <h1 class="titu">${e.title}</h1>
+                        <h3 class="titulo">${(e.copyright?e.copyright:"Autor desconocido")}<h3>
+                        ${(e.date)?`<p>Fecha:${e.date}</p>`:""}
                         <p class="descrip">${e.explanation}</p>
+
                         <div class="ver">
-                            <a  href="${e.hdurl}" class="btn btn-primary" target="_blank">Ver</a>
+                            <a href="${e.hdurl}" class="btn btn-primary" target="_blank">Ver</a>
                         </div>
                     </div>
-            </div>
+            </div> 
             
             `;
         });
