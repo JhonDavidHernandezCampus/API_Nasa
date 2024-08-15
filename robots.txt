@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /private/  # Bloquea acceso a esta carpeta (si la tuvieras)
+Allow: /  # Permite acceso a todo lo demás
+
+Sitemap: http://nasa-api-website.s3-website-us-east-1.amazonaws.com/sitemap.xml
